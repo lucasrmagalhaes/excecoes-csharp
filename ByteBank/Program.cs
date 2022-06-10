@@ -6,7 +6,18 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            Metodo();
+            try
+            {
+                Metodo();
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Não é possível fazer uma divisão por 0!");
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Aconteceu um erro!");
+            }
 
             Console.ReadLine();
         }
@@ -32,6 +43,8 @@ namespace ByteBank
 
         private static int Dividir(int numero, int divisor)
         {
+            ContaCorrente conta = null;
+
             return numero / divisor;
         }
     }
