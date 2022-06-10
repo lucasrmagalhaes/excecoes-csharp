@@ -10,6 +10,12 @@
 
 A ordem das cláusulas importa, já que são examinadas em ordem;
 
-A exceções mais específicas devem ser capturadas antes das menos específicas; e
+A exceções mais específicas devem ser capturadas antes das menos específicas;
 
-Terá um erro de compilação se ordenar os blocos catch de forma que um bloco posterior nunca possa ser alcançado.
+Terá um erro de compilação se ordenar os blocos catch de forma que um bloco posterior nunca possa ser alcançado;
+
+O bloco try pode acompanhar vários blocos catch;
+
+A CLR visita os blocos catch em ordem, de cima para baixo. Por essa razão, os tipos de exceção mais específicos devem estar no começo; e
+
+A instrução throw;, dentro de um bloco catch, relança uma exceção.
