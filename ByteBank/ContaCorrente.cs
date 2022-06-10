@@ -57,12 +57,12 @@ namespace ByteBank
 
             if (agencia <= 0)
             {
-                throw new ArgumentException("O argumento agência deve ser maior que 0.");
+                throw new ArgumentException("O argumento agência deve ser maior que 0.", nameof(agencia));
             }
 
             if (numero <= 0)
             {
-                throw new ArgumentException("O argumento número deve ser maior que 0.");
+                throw new ArgumentException("O argumento número deve ser maior que 0.", nameof(numero));
             }
 
             TotalDeContasCriadas++;
