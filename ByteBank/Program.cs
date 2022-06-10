@@ -8,16 +8,15 @@ namespace ByteBank
         {
             try
             {
-                Metodo();
+                ContaCorrente conta = new ContaCorrente(525, 0);
             }
-            catch (DivideByZeroException)
+            catch (ArgumentException ex)
             {
-                Console.WriteLine("Não é possível fazer uma divisão por 0!");
+                Console.WriteLine("Ocorreu um erro do tipo ArgumentException.");
+                Console.WriteLine(ex.Message);
             }
-            catch (NullReferenceException)
-            {
-                Console.WriteLine("Aconteceu um erro!");
-            }
+
+            Metodo();
 
             Console.ReadLine();
         }
@@ -26,7 +25,7 @@ namespace ByteBank
         {
             try
             {
-                TestaDivisao(0);
+                TestaDivisao(2);
             }
             catch (DivideByZeroException)
             {
