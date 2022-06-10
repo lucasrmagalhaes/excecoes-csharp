@@ -16,6 +16,8 @@ Terá um erro de compilação se ordenar os blocos catch de forma que um bloco p
 
 O bloco try pode acompanhar vários blocos catch;
 
-A CLR visita os blocos catch em ordem, de cima para baixo. Por essa razão, os tipos de exceção mais específicos devem estar no começo; e
+A CLR visita os blocos catch em ordem, de cima para baixo. Por essa razão, os tipos de exceção mais específicos devem estar no começo;
 
-A instrução throw;, dentro de um bloco catch, relança uma exceção.
+A instrução throw;, dentro de um bloco catch, relança uma exceção; e
+
+Convenções de nomeação de exceções utilizando o Exception ao final.
