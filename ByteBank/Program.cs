@@ -8,7 +8,7 @@ namespace ByteBank
         {
             try
             {
-                ContaCorrente conta = new ContaCorrente(525, 52665);
+                ContaCorrente conta = new ContaCorrente(0, 52665);
 
                 conta.Depositar(50);
                 Console.WriteLine(conta.Saldo);
@@ -20,6 +20,7 @@ namespace ByteBank
             {
                 Console.WriteLine("Erro no parâmetro: " + ex.ParamName);
                 Console.WriteLine("Ocorreu um erro do tipo ArgumentException.");
+                Console.WriteLine(ex.StackTrace);
                 Console.WriteLine(ex.Message);
             }
             catch (SaldoInsuficienteException ex)
