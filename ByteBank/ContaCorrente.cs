@@ -1,6 +1,4 @@
-﻿// using _05_ByteBank;
-
-using System;
+﻿using System;
 
 namespace ByteBank
 {
@@ -68,7 +66,6 @@ namespace ByteBank
             TotalDeContasCriadas++;
         }
 
-
         public bool Sacar(double valor)
         {
             if (_saldo < valor)
@@ -77,6 +74,7 @@ namespace ByteBank
             }
 
             _saldo -= valor;
+
             return true;
         }
 

@@ -8,7 +8,13 @@ namespace ByteBank
         {
             try
             {
-                ContaCorrente conta = new ContaCorrente(525, 0);
+                ContaCorrente conta = new ContaCorrente(525, 52665);
+
+                conta.Depositar(50);
+                Console.WriteLine(conta.Saldo);
+
+                conta.Sacar(500);
+                Console.WriteLine(conta.Saldo);
             }
             catch (ArgumentException ex)
             {

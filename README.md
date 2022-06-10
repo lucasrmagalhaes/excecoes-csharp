@@ -1,4 +1,4 @@
-**C#: entendendo exceções**
+**C#: entendendo [exceções](https://docs.microsoft.com/pt-br/dotnet/csharp/fundamentals/exceptions/)**
 
 **Catch (Exception)** captura todos os tipos de exceção e deve ser definido por último.
 
