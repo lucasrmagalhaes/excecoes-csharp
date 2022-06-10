@@ -66,16 +66,14 @@ namespace ByteBank
             TotalDeContasCriadas++;
         }
 
-        public bool Sacar(double valor)
+        public void Sacar(double valor)
         {
             if (_saldo < valor)
             {
-                return false;
+                throw new SaldoInsuficienteException("Saldo Insuficiente para saque no valor de " + valor + ".");
             }
 
             _saldo -= valor;
-
-            return true;
         }
 
         public void Depositar(double valor)
