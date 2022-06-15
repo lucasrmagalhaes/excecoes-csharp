@@ -6,38 +6,19 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            try
-            {
-                ContaCorrente conta = new ContaCorrente(4564, 789684);
-                ContaCorrente conta2 = new ContaCorrente(7891, 456794);
-
-                conta.Depositar(50);
-                Console.WriteLine(conta.Saldo);
-
-                conta.Transferir(500, conta2);
-                Console.WriteLine(conta2.Saldo);
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine("Erro no parâmetro: " + ex.ParamName);
-                Console.WriteLine("Ocorreu um erro do tipo ArgumentException.");
-                Console.WriteLine(ex.StackTrace);
-                Console.WriteLine(ex.Message);
-            }
-            catch (OperacaoFinanceiraException ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
-
-                Console.WriteLine("Informações da INNER EXCEPTION (exceção interna):");
-
-                Console.WriteLine(ex.InnerException.Message);
-                Console.WriteLine(ex.InnerException.StackTrace);
-            }
-
-            Metodo();
-
+            CarregarContas();
+            // Metodo();
             Console.ReadLine();
+        }
+
+        private static void CarregarContas()
+        {
+            LeitorDeArquivo leitor = new LeitorDeArquivo("contas.txt");
+            leitor.LerProximaLinha();
+            leitor.LerProximaLinha();
+            leitor.LerProximaLinha();
+
+            leitor.Fechar();
         }
 
         private static void Metodo()
