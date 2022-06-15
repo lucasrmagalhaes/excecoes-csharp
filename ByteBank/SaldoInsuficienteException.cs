@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace ByteBank
+﻿namespace ByteBank
 {
-    public class SaldoInsuficienteException : Exception
+    public class SaldoInsuficienteException : OperacaoFinanceiraException
     {
         public SaldoInsuficienteException(string mensagem) : base(mensagem)
         {
-
+            
         }
     }
 }

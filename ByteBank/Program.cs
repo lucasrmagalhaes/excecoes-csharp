@@ -8,13 +8,14 @@ namespace ByteBank
         {
             try
             {
-                ContaCorrente conta = new ContaCorrente(0, 52665);
+                ContaCorrente conta = new ContaCorrente(4564, 789684);
+                ContaCorrente conta2 = new ContaCorrente(7891, 456794);
 
                 conta.Depositar(50);
                 Console.WriteLine(conta.Saldo);
 
-                conta.Sacar(500);
-                Console.WriteLine(conta.Saldo);
+                conta.Transferir(500, conta2);
+                Console.WriteLine(conta2.Saldo);
             }
             catch (ArgumentException ex)
             {
@@ -23,10 +24,15 @@ namespace ByteBank
                 Console.WriteLine(ex.StackTrace);
                 Console.WriteLine(ex.Message);
             }
-            catch (SaldoInsuficienteException ex)
+            catch (OperacaoFinanceiraException ex)
             {
                 Console.WriteLine(ex.Message);
-                Console.WriteLine("Exceção do tipo SaldoInsuficienteException");
+                Console.WriteLine(ex.StackTrace);
+
+                Console.WriteLine("Informações da INNER EXCEPTION (exceção interna):");
+
+                Console.WriteLine(ex.InnerException.Message);
+                Console.WriteLine(ex.InnerException.StackTrace);
             }
 
             Metodo();
@@ -50,7 +56,7 @@ namespace ByteBank
         {
             int resultado = Dividir(10, divisor);
 
-            Console.WriteLine("Resultado da divisão de 10 por " + divisor + " é " + resultado + ".");
+            // Console.WriteLine("Resultado da divisão de 10 por " + divisor + " é " + resultado + ".");
         }
 
         private static int Dividir(int numero, int divisor)
