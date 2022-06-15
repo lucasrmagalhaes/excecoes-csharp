@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace ByteBank
 {
@@ -15,6 +16,9 @@ namespace ByteBank
         public string LerProximaLinha()
         {
             Console.WriteLine("Lendo linha...");
+
+            throw new IOException();
+
             return "Linha do arquivo";
         }
 

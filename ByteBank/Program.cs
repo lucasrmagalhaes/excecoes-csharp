@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace ByteBank
 {
@@ -7,18 +8,29 @@ namespace ByteBank
         static void Main(string[] args)
         {
             CarregarContas();
-            // Metodo();
             Console.ReadLine();
+            
+            // Metodo();
         }
 
         private static void CarregarContas()
         {
             LeitorDeArquivo leitor = new LeitorDeArquivo("contas.txt");
-            leitor.LerProximaLinha();
-            leitor.LerProximaLinha();
-            leitor.LerProximaLinha();
 
-            leitor.Fechar();
+            try
+            {
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+                leitor.LerProximaLinha();
+
+                leitor.Fechar();
+            }
+            catch (IOException ex)
+            {
+                leitor.Fechar();
+
+                Console.WriteLine("Exceção do tipo IOException capturada e tratada!");
+            }
         }
 
         private static void Metodo()
